@@ -14,6 +14,11 @@
 
 6. [Установка необходимых программ для сборки ее из исходников][7]
 
+# Документация СРТА
+Этот раздел вынесен в отдельную {папку...] [100]
+
+
+# Права использования
 
 Программное обеспечение АПК "СРТА-Регистратор" разработано [ООО "Рутений"][0].
 
@@ -30,3 +35,5 @@
 [6]: https://github.com/SVrz/APK-SrtaReg/blob/main/doc/%D0%98%D0%BD%D1%81%D1%82%D1%80%D1%83%D0%BA%D1%86%D0%B8%D1%8F_%D0%BF%D0%BE_%D0%B0%D0%B4%D0%BC%D0%B8%D0%BD%D0%B8%D1%81%D1%82%D1%80%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8E_%D0%9F%D0%9E_%D0%A1%D0%A0%D0%A2%D0%90-%D0%A0%D0%B5%D0%B3%D0%B8%D1%81%D1%82%D1%80%D0%B0%D1%82%D0%BE%D1%80.md
 
 [7]:https://github.com/SVrz/APK-SrtaReg/blob/main/doc/%D0%98%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%86%D0%B8%D1%8F_%D0%B4%D0%BB%D1%8F_%D1%81%D0%B1%D0%BE%D1%80%D0%BA%D0%B8_%D0%9F%D0%9E.md
+
+[100]:https://github.com/SVrz/APK-SrtaReg/blob/main/manuals/manuals.md

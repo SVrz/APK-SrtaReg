@@ -49,7 +49,8 @@
 
 
 [0]: http://rute.ru/index.php?id=srta1002-002
+
 [1]: https://rute.ru/files/SRTA_BS204_R3.zip
 [2]: https://rute.ru/files/SRTA_BS204.zip
 
-[3]: https://github.com/SVrz/APK-SrtaReg/blob/main/manuals/%D0%A0%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%BE%20%D0%BF%D0%BE%20%D1%8D%D0%BA%D1%81%D0%BF%D0%B0%D0%BB%D1%83%D0%B0%D1%82%D0%B0%D1%86%D0%B8%D0%B8%20%D0%A0%D0%A3%D0%A2%D0%95.421411.005%20%D0%A0%D0%AD%20%D0%A1%D0%A0%D0%A2%D0%901.002-002_%D1%80%D0%B5%D0%B2.%203.1.doc
+[3]: 

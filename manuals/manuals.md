@@ -53,4 +53,4 @@
 [1]: https://rute.ru/files/SRTA_BS204_R3.zip
 [2]: https://rute.ru/files/SRTA_BS204.zip
 
-[3]: 
+[3]: https://github.com/SVrz/APK-SrtaReg/blob/main/manuals/%D0%A0%D0%AD%20%D0%A1%D0%A0%D0%A2%D0%90_%D1%80%D0%B5%D0%B2.%203.1_2014.doc

@@ -38,7 +38,7 @@
 
 [7]:https://github.com/SVrz/APK-SrtaReg/blob/main/doc/%D0%98%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%86%D0%B8%D1%8F_%D0%B4%D0%BB%D1%8F_%D1%81%D0%B1%D0%BE%D1%80%D0%BA%D0%B8_%D0%9F%D0%9E.md
 
-[8] https://github.com/SVrz/APK-SrtaReg/blob/main/doc/Инструкция_по_настройке_статичного_IP-адреса.md
+[8]:https://github.com/SVrz/APK-SrtaReg/blob/main/doc/Инструкция_по_настройке_статичного_IP-адреса.md
 
 
 

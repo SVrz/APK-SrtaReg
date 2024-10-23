@@ -1,17 +1,17 @@
-## Инструкция по настройке статического IP-адреса
+# Инструкция по настройке статического IP-адреса
 Настройка статического IP-адреса в Debian 11 (и других дистрибутивах Linux) может быть выполнена несколькими способами, в зависимости от используемого сетевого менеджера. В Debian 11 обычно используется NetworkManager или более традиционный ifupdown (который управляет файлами в /etc/network/interfaces).
 
-# Способ 1: Использование NetworkManager (рекомендуется)
+## Способ 1: Использование NetworkManager (рекомендуется)
 Если NetworkManager установлен и используется, вы можете настроить статический IP-адрес в консольном режиме с использованием NetworkManager. Необходимо использовать команду nmcli. Вот пошаговая инструкция:
 
-# Шаг 1: Определите имя вашего сетевого интерфейса
+### Шаг 1: Определите имя вашего сетевого интерфейса
 Сначала определите имя вашего сетевого интерфейса. Вы можете сделать это с помощью команды:
 ```
 ip a
 ```
 В выводе найдите интерфейс, который вы хотите настроить (обычно это eth0, enp0s3, wlan0 и т.д.).
 
-# Шаг 2: Настройте статический IP-адрес с помощью ‘nmcli’
+### Шаг 2: Настройте статический IP-адрес с помощью ‘nmcli’
 Используйте команду ‘nmcli’ для настройки статического IP-адреса. Пример команды:
 ```
 sudo nmcli connection modify <имя_соединения> ipv4.addresses <IP_адрес>/<маска_подсети> ipv4.gateway <шлюз> ipv4.dns <DNS_сервер> ipv4.method manual
@@ -24,100 +24,96 @@ sudo nmcli connection modify <имя_соединения> ipv4.addresses <IP_а
 <шлюз> — это IP-адрес вашего шлюза по умолчанию.
 <DNS_сервер> — это IP-адрес вашего DNS-сервера.
 
-
-
-
-# Шаг 3: Перезапустите сетевое соединение
+### Шаг 3: Перезапустите сетевое соединение
 Чтобы изменения вступили в силу, перезапустите сетевое соединение:
 ```
 sudo nmcli connection down "Wired connection 1"
 sudo nmcli connection up "Wired connection 1"
 ```
-# Шаг 4: Проверьте настройки
+### Шаг 4: Проверьте настройки
 Проверьте, что IP-адрес был успешно назначен:
 ```
 ip a
 ```
 Также убедитесь, что вы можете пинговать внешние адреса:
 ```
-	ping google.com
+ping google.com
 ```
-# Способ 2: Использование ifupdown (старый способ)
+## Способ 2: Использование ifupdown (старый способ)
 Если вы предпочитаете использовать ifupdown, вы можете настроить статический IP-адрес через файл ‘/etc/network/interfaces’.
 
-# Шаг 1: Откройте файл /etc/network/interfaces
+### Шаг 1: Откройте файл /etc/network/interfaces
 Используйте текстовый редактор, например nano:	
 ```
-	sudo nano /etc/network/interfaces
+sudo nano /etc/network/interfaces
 ```
-# Шаг 2: Добавьте конфигурацию для статического IP-адреса
+### Шаг 2: Добавьте конфигурацию для статического IP-адреса
 Добавьте следующие строки для настройки статического IP-адреса:
 ```
-	auto <интерфейс>
-	iface <интерфейс> inet static
-	    address <IP_адрес>
-	    netmask <маска_подсети>
-	    gateway <шлюз>
-	    dns-nameservers <DNS_сервер>
+auto <интерфейс>
+iface <интерфейс> inet static
+    address <IP_адрес>
+    netmask <маска_подсети>
+    gateway <шлюз>
+    dns-nameservers <DNS_сервер>
 ```        
 Пример:
 ```
-	auto eth0
-	iface eth0 inet static
-	    address 192.168.1.100
-	    netmask 255.255.255.0
-	    gateway 192.168.1.1
-	    dns-nameservers 8.8.8.8
+auto eth0
+iface eth0 inet static
+    address 192.168.1.100
+    netmask 255.255.255.0
+    gateway 192.168.1.1
+    dns-nameservers 8.8.8.8
 ```
-
-# Шаг 3: Перезапустите сетевой сервис
+### Шаг 3: Перезапустите сетевой сервис
 Чтобы изменения вступили в силу, перезапустите сетевой сервис:
 ```
-	sudo systemctl restart networking
+sudo systemctl restart networking
 ```
 Или перезагрузите систему:
 ```
-	sudo reboot
+sudo reboot
 ```    
 Теперь ваш статический IP-адрес должен быть настроен и работать.	
 
 ## Проверка установки 'nmcli' (NetworkManager Command Line Interface)
 Чтобы проверить, установлен ли 'nmcli' (NetworkManager Command Line Interface) в вашей системе Debian 11, вы можете использовать следующие команды:
 
-# Способ 1: Проверка наличия 'nmcli'
+### Способ 1: Проверка наличия 'nmcli'
 Выполните команду:
 ```
-	nmcli --version
+nmcli --version
 ```    
 Если nmcli установлен, вы увидите версию NetworkManager. Например:
 ```
-	nmcli tool, version 1.30.0
+nmcli tool, version 1.30.0
 ```
-# Способ 2: Проверка наличия NetworkManager
+### Способ 2: Проверка наличия NetworkManager
 Вы также можете проверить, установлен ли сам NetworkManager:
 ```
-	systemctl status NetworkManager
+systemctl status NetworkManager
 ```
 Если NetworkManager установлен и запущен, вы увидите статус, похожий на:
 ```
-	● NetworkManager.service - Network Manager
-	   Loaded: loaded (/lib/systemd/system/NetworkManager.service; enabled; vendor preset: enabled)
-	   Active: active (running) since ...
+● NetworkManager.service - Network Manager
+   Loaded: loaded (/lib/systemd/system/NetworkManager.service; enabled; vendor preset: enabled)
+   Active: active (running) since ...
 ```
-# Способ 3: Проверка установленных пакетов
+### Способ 3: Проверка установленных пакетов
 Вы можете проверить, установлен ли пакет network-manager с помощью команды:
 ```
-	dpkg -l | grep network-manager
+dpkg -l | grep network-manager
 ```    
 Если пакет установлен, вы увидите что-то вроде:
 ```
-	ii  network-manager  1.30.0-1   amd64  network management framework (daemon and userspace tools)
+ii  network-manager  1.30.0-1   amd64  network management framework (daemon and userspace tools)
 ```
-Установка nmcli (если он не установлен)	
+## Установка 'nmcli' (если он не установлен)	
 Если 'nmcli' или NetworkManager не установлены, вы можете установить их с помощью следующих команд:
 ```
-	sudo apt update
-	sudo apt install network-manager
+sudo apt update
+sudo apt install network-manager
 ```
 После установки NetworkManager, 'nmcli' будет доступен для использования.
 
